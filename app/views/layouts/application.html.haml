@@ -1,0 +1,41 @@
+!!! 5
+%html
+  %head
+
+    %title 'youPM'
+    %meta{:name => 'robots', :content => 'index,follow'}
+    %meta(charset="utf-8")
+
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+    %body         
+      .topbar(data-dropdown="dropdown")
+        .fill
+          .container
+            = link_to 'You Pm'
+            = render partial: 'shared/navigation_merchant' if current_account_hash[:type] == :merchant
+            %ul.nav.secondary-nav
+              %li.dropdown
+                = link_to current_account_hash[:name] + ' (' + current_account_hash[:type].to_s.capitalize + ')', '#', class: 'dropdown-toggle'
+                %ul.dropdown-menu
+                  %li= link_to 'Switch Account', '#'
+                  %li.divider
+                  %li= link_to 'Logout', logout_path
+
+      .container
+        .content.main
+          - if @page_title
+            .page-header
+              %h1
+                = @page_title
+                %small= @page_subtitle
+
+          .row
+            - if content_for?(:sidebar)
+              .span13= yield
+              .span3.sidebar= yield :sidebar
+            - else
+              .span16= yield
+

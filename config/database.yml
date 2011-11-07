@@ -3,7 +3,18 @@ development:
   password: EEUyXWaboQ33YC
   adapter: mysql2
   encoding: utf8
-  host: pm.312h.com # define in /etc/hosts
+  host: pm.312h.com
+  database: yourpm_dev
+
+# This environment is if you want to develop locally using a local available
+# mysql server (e.g. because contacting pm.312h.com over the network on every page view
+# is too slow)
+development_local:
+  username: rails
+  password: devel
+  adapter: mysql2
+  encoding: utf8
+  host: local_mysql    # modify your /etc/hosts and direct to ip of your mysql-server
   database: yourpm_dev
 
 # Warning: The database defined as "test" will be erased and
@@ -14,7 +25,7 @@ test:
   password: EEUyXWaboQ33YC
   adapter: mysql2
   encoding: utf8
-  host: pm.312h.com # define in /etc/hosts
+  host: pm.312h.com
   database: yourpm_test
 
 production:
