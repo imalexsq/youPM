@@ -21,7 +21,7 @@ set :application, "youPM"
 set :repository, "git@github.com:halixand/youPM.git"
 set :branch, "master"
 set :scm, "git"
-set :domain, "youpm.312h.com"
+set :domain, "pm.312h.com"
 set :port, 22
 set :deploy_to, "/var/www/youPM_live/"
 set :deploy_via, :remote_cache
