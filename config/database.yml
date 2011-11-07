@@ -3,7 +3,7 @@ development:
   password: devel
   adapter: mysql2
   encoding: utf8
-  host: localhost # define in /etc/hosts
+  host: local_mysql # define in /etc/hosts
   database: yourpm_dev
 
 # Warning: The database defined as "test" will be erased and
@@ -14,7 +14,7 @@ test:
   password: devel
   adapter: mysql2
   encoding: utf8
-  host: localhost # define in /etc/hosts
+  host: local_mysql # define in /etc/hosts
   database: yourpm_test
 
 production:
