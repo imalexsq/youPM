@@ -9,9 +9,9 @@ share a development database.
 
 For the development phase we opened the mysql-port on the AWS
 server:
-host: pm.312h.com
-username: rails
-password: EEUyXWaboQ33YC
+    host: pm.312h.com
+    username: rails
+    password: EEUyXWaboQ33YC
 
 **It's likely that we change that as soon as there are production data on that server.
 We probably then set up another dedicated test mysql server.**
@@ -31,8 +31,8 @@ Christian so that we can add your key to the authorized_keys list. To deploy we 
 If you commited / merged your changes into the
 master branch, you can call capistrano from your Rails root directory, e.g.
 
-cd /rails/youPM
-cap production deploy
+    cd /rails/youPM
+    cap production deploy
 
 Because we're using an AWS micro instance, deployment can take a while due to
 precompilation of the asset pipeline. After deployment Rails also need a couple of seconds
