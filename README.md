@@ -9,9 +9,9 @@ share a development database.
 
 For the development phase we opened the mysql-port on the AWS
 server:
-    host: pm.312h.com
-    username: rails
-    password: EEUyXWaboQ33YC
+* host: pm.312h.com
+* username: rails
+* password: EEUyXWaboQ33YC
 
 **It's likely that we change that as soon as there are production data on that server.
 We probably then set up another dedicated test mysql server.**
