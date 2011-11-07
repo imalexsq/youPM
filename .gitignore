@@ -1,4 +1,7 @@
 .bundle
+.idea
+data/
+bin/
 db/*.sqlite3
 log/*.log
 tmp/
