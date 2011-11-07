@@ -21,12 +21,12 @@ set :application, "youPM"
 set :repository, "git@github.com:halixand/youPM.git"
 set :branch, "master"
 set :scm, "git"
-set :domain, "www.302h.com"
+set :domain, "youpm.312h.com"
 set :port, 22
-set :deploy_to, "/var/www/youPM/"
+set :deploy_to, "/var/www/youPM_live/"
 set :deploy_via, :remote_cache
 set :scm_verbose, :true
-set :user, "www-data"
+set :user, "ubuntu"
 set :use_sudo, false
 set :rvm_bin_path, "/usr/local/rvm/bin"
 ssh_options[:forward_agent] = true
