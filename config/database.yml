@@ -1,9 +1,9 @@
 development:
   username: rails
-  password: devel
+  password: EEUyXWaboQ33YC
   adapter: mysql2
   encoding: utf8
-  host: local_mysql # define in /etc/hosts
+  host: pm.312h.com # define in /etc/hosts
   database: yourpm_dev
 
 # Warning: The database defined as "test" will be erased and
@@ -11,10 +11,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   username: rails
-  password: devel
+  password: EEUyXWaboQ33YC
   adapter: mysql2
   encoding: utf8
-  host: local_mysql # define in /etc/hosts
+  host: pm.312h.com # define in /etc/hosts
   database: yourpm_test
 
 production:
