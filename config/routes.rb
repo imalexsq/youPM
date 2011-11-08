@@ -3,4 +3,7 @@ YouPM::Application.routes.draw do
 
   root to: 'index#index'
 
+  # Test routes for showing bootstrap design suggesstions
+
+
 end

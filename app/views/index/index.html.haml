@@ -1,2 +1,48 @@
-%h1 Index#index
-%p Find me in app/views/index/index.html.haml
+.hero-unit
+  %h1 Hello World
+  %p
+    This is going to be the best property management software in the world. For now, you have to
+    believe it. And maybe you want to take a look at the html/haml of this page to get a feeling
+    for how twitter
+    = link_to 'bootstrap', 'http://twitter.github.com/bootstrap/'
+    is structured.
+.row
+  .span10
+    %h2 This is a 10-grid wide column for contents.
+    %p
+      Overall we have 16 grids available.
+    %p
+      %span.label.success Sucess/Green label
+      %span.label.warning Warning label
+      %span.label.error Error Label
+      %span.label.notice Notice label
+
+  .span6
+    %h2 Sample sidebar column
+    %p
+      And some nice effects built into Twitter Bootstrap, like the
+      %a(rel="popover" title="Popover Sample" data-content="This is a popover Sample") Popover
+      or the
+      %a(rel="twipsy" title="Tooltip Hint") Tooltip Hint.
+      We also have nice buttons:
+    = link_to 'Large Button', '#', class: [:btn, :large, :primary]
+    %a.btn.small.danger Smaller Button
+.row
+  .span16
+    %h2 You probably like Tabs?
+    %p Twitter Bootstrap has easy tabs built in.
+    %ul.tabs(data-tabs="tabs")
+      %li.active= link_to 'First Tab', '#tab1'
+      %li= link_to 'Second Tab', '#tab2'
+      %li= link_to 'Last Tab', '#tab3'
+
+    .tab-content
+      .active#tab1
+        %h1 Contents for Tab 1
+        %p  Bla Bla Bla
+
+      #tab2
+        %h1 Tab 2
+
+      #tab3
+        %h1 Tab 3

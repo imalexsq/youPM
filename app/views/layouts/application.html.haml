@@ -10,32 +10,23 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
-    %body         
+    %body
       .topbar(data-dropdown="dropdown")
         .fill
           .container
-            = link_to 'You Pm'
-            = render partial: 'shared/navigation_merchant' if current_account_hash[:type] == :merchant
+            =link_to 'youPM', '#', class: :brand
+            %ul.nav
+              %li{active_class(:company )}= link_to 'Your Company', '#'
+              %li{active_class(:offers)}= link_to 'Properties', '#'
+              %li{active_class(:affiliates)}= link_to 'Tenants', '#'
+              %li{active_class(:reports)}= link_to 'Reports', '#'
             %ul.nav.secondary-nav
               %li.dropdown
-                = link_to current_account_hash[:name] + ' (' + current_account_hash[:type].to_s.capitalize + ')', '#', class: 'dropdown-toggle'
+                = link_to 'Hello John Doe', '#', class: 'dropdown-toggle'
                 %ul.dropdown-menu
-                  %li= link_to 'Switch Account', '#'
+                  %li= link_to 'Switch to another account', '#'
                   %li.divider
-                  %li= link_to 'Logout', logout_path
-
+                  %li= link_to 'Logout', '#'
       .container
-        .content.main
-          - if @page_title
-            .page-header
-              %h1
-                = @page_title
-                %small= @page_subtitle
-
-          .row
-            - if content_for?(:sidebar)
-              .span13= yield
-              .span3.sidebar= yield :sidebar
-            - else
-              .span16= yield
-
+        .content
+          = yield
