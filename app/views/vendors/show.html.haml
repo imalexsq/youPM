@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Company name:
+  = @vendor.company_name
+%p
+  %b Streetaddress:
+  = @vendor.streetaddress
+%p
+  %b Phone number:
+  = @vendor.phone_number
+%p
+  %b Phone mobile:
+  = @vendor.phone_mobile
+%p
+  %b Phone emergency:
+  = @vendor.phone_emergency
+%p
+  %b Fax number:
+  = @vendor.fax_number
+%p
+  %b Email:
+  = @vendor.email
+%p
+  %b Website:
+  = @vendor.website
+%p
+  %b Contact person:
+  = @vendor.contact_person
+%p
+  %b Description:
+  = @vendor.description
+%p
+  %b Services:
+  = @vendor.services
+%p
+  %b Vendor type:
+  = @vendor.vendor_type
+
+= link_to 'Edit', edit_vendor_path(@vendor)
+\|
+= link_to 'Back', vendors_path

@@ -1,0 +1,64 @@
+= form_for @property_unit do |f|
+  -if @property_unit.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@property_unit.errors.count, "error")} prohibited this property_unit from being saved:"
+      %ul
+        - @property_unit.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :size
+    = f.text_field :size
+  .field
+    = f.label :size_measure
+    = f.text_field :size_measure
+  .field
+    = f.label :bedrooms
+    = f.text_field :bedrooms
+  .field
+    = f.label :bathrooms
+    = f.text_field :bathrooms
+  .field
+    = f.label :type
+    = f.text_field :type
+  .field
+    = f.label :diningrooms
+    = f.text_field :diningrooms
+  .field
+    = f.label :familyrooms
+    = f.text_field :familyrooms
+  .field
+    = f.label :officerooms
+    = f.text_field :officerooms
+  .field
+    = f.label :basement
+    = f.check_box :basement
+  .field
+    = f.label :loft
+    = f.check_box :loft
+  .field
+    = f.label :floortype
+    = f.text_field :floortype
+  .field
+    = f.label :fireplace
+    = f.check_box :fireplace
+  .field
+    = f.label :swimmingpool
+    = f.check_box :swimmingpool
+  .field
+    = f.label :spa
+    = f.check_box :spa
+  .field
+    = f.label :pets_allowed
+    = f.check_box :pets_allowed
+  .field
+    = f.label :green
+    = f.check_box :green
+  .field
+    = f.label :accessible
+    = f.check_box :accessible
+  .field
+    = f.label :furnished
+    = f.check_box :furnished
+  .actions
+    = f.submit 'Save'

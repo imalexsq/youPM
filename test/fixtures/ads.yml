@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  url: MyString
+  expiration_date: 2011-11-18
+  account_name: MyString
+  description: MyText
+  num_responses: 
+
+two:
+  url: MyString
+  expiration_date: 2011-11-18
+  account_name: MyString
+  description: MyText
+  num_responses: 

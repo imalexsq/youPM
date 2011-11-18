@@ -1,0 +1,35 @@
+%h1 Listing managers
+
+%table
+  %tr
+    %th Email
+    %th Passwordhash
+    %th Lastname
+    %th Firstname
+    %th Phonenumber
+    %th City
+    %th State
+    %th Zip
+    %th Street
+    %th
+    %th
+    %th
+
+  - @managers.each do |manager|
+    %tr
+      %td= manager.email
+      %td= manager.passwordhash
+      %td= manager.lastname
+      %td= manager.firstname
+      %td= manager.phonenumber
+      %td= manager.city
+      %td= manager.state
+      %td= manager.zip
+      %td= manager.street
+      %td= link_to 'Show', manager
+      %td= link_to 'Edit', edit_manager_path(manager)
+      %td= link_to 'Destroy', manager, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Manager', new_manager_path

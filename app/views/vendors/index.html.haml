@@ -1,0 +1,41 @@
+%h1 Listing vendors
+
+%table
+  %tr
+    %th Company name
+    %th Streetaddress
+    %th Phone number
+    %th Phone mobile
+    %th Phone emergency
+    %th Fax number
+    %th Email
+    %th Website
+    %th Contact person
+    %th Description
+    %th Services
+    %th Vendor type
+    %th
+    %th
+    %th
+
+  - @vendors.each do |vendor|
+    %tr
+      %td= vendor.company_name
+      %td= vendor.streetaddress
+      %td= vendor.phone_number
+      %td= vendor.phone_mobile
+      %td= vendor.phone_emergency
+      %td= vendor.fax_number
+      %td= vendor.email
+      %td= vendor.website
+      %td= vendor.contact_person
+      %td= vendor.description
+      %td= vendor.services
+      %td= vendor.vendor_type
+      %td= link_to 'Show', vendor
+      %td= link_to 'Edit', edit_vendor_path(vendor)
+      %td= link_to 'Destroy', vendor, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Vendor', new_vendor_path

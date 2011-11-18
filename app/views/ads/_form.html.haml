@@ -1,0 +1,25 @@
+= form_for @ad do |f|
+  -if @ad.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@ad.errors.count, "error")} prohibited this ad from being saved:"
+      %ul
+        - @ad.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :expiration_date
+    = f.date_select :expiration_date
+  .field
+    = f.label :account_name
+    = f.text_field :account_name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :num_responses
+    = f.text_field :num_responses
+  .actions
+    = f.submit 'Save'

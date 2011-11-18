@@ -1,0 +1,27 @@
+%h1 Listing property_assets
+
+%table
+  %tr
+    %th Type
+    %th Url
+    %th Width
+    %th Height
+    %th Visibility
+    %th
+    %th
+    %th
+
+  - @property_assets.each do |property_asset|
+    %tr
+      %td= property_asset.type
+      %td= property_asset.url
+      %td= property_asset.width
+      %td= property_asset.height
+      %td= property_asset.visibility
+      %td= link_to 'Show', property_asset
+      %td= link_to 'Edit', edit_property_asset_path(property_asset)
+      %td= link_to 'Destroy', property_asset, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Property asset', new_property_asset_path

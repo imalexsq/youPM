@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  size: 
+  size_measure: 
+  bedrooms: 
+  bathrooms: 
+  type: 
+  diningrooms: 
+  familyrooms: 
+  officerooms: 
+  basement: false
+  loft: false
+  floortype: MyString
+  fireplace: false
+  swimmingpool: false
+  spa: false
+  pets_allowed: false
+  green: false
+  accessible: false
+  furnished: false
+
+two:
+  size: 
+  size_measure: 
+  bedrooms: 
+  bathrooms: 
+  type: 
+  diningrooms: 
+  familyrooms: 
+  officerooms: 
+  basement: false
+  loft: false
+  floortype: MyString
+  fireplace: false
+  swimmingpool: false
+  spa: false
+  pets_allowed: false
+  green: false
+  accessible: false
+  furnished: false

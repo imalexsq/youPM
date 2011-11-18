@@ -1,0 +1,19 @@
+%h1 Listing work_assignments
+
+%table
+  %tr
+    %th Service from
+    %th
+    %th
+    %th
+
+  - @work_assignments.each do |work_assignment|
+    %tr
+      %td= work_assignment.service_from
+      %td= link_to 'Show', work_assignment
+      %td= link_to 'Edit', edit_work_assignment_path(work_assignment)
+      %td= link_to 'Destroy', work_assignment, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Work assignment', new_work_assignment_path

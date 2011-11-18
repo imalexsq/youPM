@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Type:
+  = @property_asset.type
+%p
+  %b Url:
+  = @property_asset.url
+%p
+  %b Width:
+  = @property_asset.width
+%p
+  %b Height:
+  = @property_asset.height
+%p
+  %b Visibility:
+  = @property_asset.visibility
+
+= link_to 'Edit', edit_property_asset_path(@property_asset)
+\|
+= link_to 'Back', property_assets_path

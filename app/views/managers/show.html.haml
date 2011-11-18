@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @manager.email
+%p
+  %b Passwordhash:
+  = @manager.passwordhash
+%p
+  %b Lastname:
+  = @manager.lastname
+%p
+  %b Firstname:
+  = @manager.firstname
+%p
+  %b Phonenumber:
+  = @manager.phonenumber
+%p
+  %b City:
+  = @manager.city
+%p
+  %b State:
+  = @manager.state
+%p
+  %b Zip:
+  = @manager.zip
+%p
+  %b Street:
+  = @manager.street
+
+= link_to 'Edit', edit_manager_path(@manager)
+\|
+= link_to 'Back', managers_path

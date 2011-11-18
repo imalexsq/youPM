@@ -1,0 +1,53 @@
+%h1 Listing property_units
+
+%table
+  %tr
+    %th Size
+    %th Size measure
+    %th Bedrooms
+    %th Bathrooms
+    %th Type
+    %th Diningrooms
+    %th Familyrooms
+    %th Officerooms
+    %th Basement
+    %th Loft
+    %th Floortype
+    %th Fireplace
+    %th Swimmingpool
+    %th Spa
+    %th Pets allowed
+    %th Green
+    %th Accessible
+    %th Furnished
+    %th
+    %th
+    %th
+
+  - @property_units.each do |property_unit|
+    %tr
+      %td= property_unit.size
+      %td= property_unit.size_measure
+      %td= property_unit.bedrooms
+      %td= property_unit.bathrooms
+      %td= property_unit.type
+      %td= property_unit.diningrooms
+      %td= property_unit.familyrooms
+      %td= property_unit.officerooms
+      %td= property_unit.basement
+      %td= property_unit.loft
+      %td= property_unit.floortype
+      %td= property_unit.fireplace
+      %td= property_unit.swimmingpool
+      %td= property_unit.spa
+      %td= property_unit.pets_allowed
+      %td= property_unit.green
+      %td= property_unit.accessible
+      %td= property_unit.furnished
+      %td= link_to 'Show', property_unit
+      %td= link_to 'Edit', edit_property_unit_path(property_unit)
+      %td= link_to 'Destroy', property_unit, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Property unit', new_property_unit_path

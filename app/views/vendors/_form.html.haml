@@ -1,0 +1,46 @@
+= form_for @vendor do |f|
+  -if @vendor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@vendor.errors.count, "error")} prohibited this vendor from being saved:"
+      %ul
+        - @vendor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :company_name
+    = f.text_field :company_name
+  .field
+    = f.label :streetaddress
+    = f.text_field :streetaddress
+  .field
+    = f.label :phone_number
+    = f.text_field :phone_number
+  .field
+    = f.label :phone_mobile
+    = f.text_field :phone_mobile
+  .field
+    = f.label :phone_emergency
+    = f.text_field :phone_emergency
+  .field
+    = f.label :fax_number
+    = f.text_field :fax_number
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :website
+    = f.text_field :website
+  .field
+    = f.label :contact_person
+    = f.text_field :contact_person
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :services
+    = f.text_area :services
+  .field
+    = f.label :vendor_type
+    = f.text_field :vendor_type
+  .actions
+    = f.submit 'Save'

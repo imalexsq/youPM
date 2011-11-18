@@ -1,0 +1,60 @@
+%p#notice= notice
+
+%p
+  %b Size:
+  = @property_unit.size
+%p
+  %b Size measure:
+  = @property_unit.size_measure
+%p
+  %b Bedrooms:
+  = @property_unit.bedrooms
+%p
+  %b Bathrooms:
+  = @property_unit.bathrooms
+%p
+  %b Type:
+  = @property_unit.type
+%p
+  %b Diningrooms:
+  = @property_unit.diningrooms
+%p
+  %b Familyrooms:
+  = @property_unit.familyrooms
+%p
+  %b Officerooms:
+  = @property_unit.officerooms
+%p
+  %b Basement:
+  = @property_unit.basement
+%p
+  %b Loft:
+  = @property_unit.loft
+%p
+  %b Floortype:
+  = @property_unit.floortype
+%p
+  %b Fireplace:
+  = @property_unit.fireplace
+%p
+  %b Swimmingpool:
+  = @property_unit.swimmingpool
+%p
+  %b Spa:
+  = @property_unit.spa
+%p
+  %b Pets allowed:
+  = @property_unit.pets_allowed
+%p
+  %b Green:
+  = @property_unit.green
+%p
+  %b Accessible:
+  = @property_unit.accessible
+%p
+  %b Furnished:
+  = @property_unit.furnished
+
+= link_to 'Edit', edit_property_unit_path(@property_unit)
+\|
+= link_to 'Back', property_units_path

@@ -1,0 +1,45 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @property.name
+%p
+  %b Headline:
+  = @property.headline
+%p
+  %b Description:
+  = @property.description
+%p
+  %b Streetaddress:
+  = @property.streetaddress
+%p
+  %b Zipcode:
+  = @property.zipcode
+%p
+  %b City:
+  = @property.city
+%p
+  %b State:
+  = @property.state
+%p
+  %b Country:
+  = @property.country
+%p
+  %b Longitude:
+  = @property.longitude
+%p
+  %b Latitude:
+  = @property.latitude
+%p
+  %b Type:
+  = @property.type
+%p
+  %b Year built:
+  = @property.year_built
+%p
+  %b Stories:
+  = @property.stories
+
+= link_to 'Edit', edit_property_path(@property)
+\|
+= link_to 'Back', properties_path

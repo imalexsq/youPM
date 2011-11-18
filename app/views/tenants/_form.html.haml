@@ -1,0 +1,37 @@
+= form_for @tenant do |f|
+  -if @tenant.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@tenant.errors.count, "error")} prohibited this tenant from being saved:"
+      %ul
+        - @tenant.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :firstname
+    = f.text_field :firstname
+  .field
+    = f.label :lastname
+    = f.text_field :lastname
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :phone_private
+    = f.text_field :phone_private
+  .field
+    = f.label :phone_work
+    = f.text_field :phone_work
+  .field
+    = f.label :phone_mobile
+    = f.text_field :phone_mobile
+  .field
+    = f.label :id_number
+    = f.text_field :id_number
+  .field
+    = f.label :id_issuer
+    = f.text_field :id_issuer
+  .field
+    = f.label :date_of_birth
+    = f.date_select :date_of_birth
+  .actions
+    = f.submit 'Save'

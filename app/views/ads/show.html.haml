@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Url:
+  = @ad.url
+%p
+  %b Expiration date:
+  = @ad.expiration_date
+%p
+  %b Account name:
+  = @ad.account_name
+%p
+  %b Description:
+  = @ad.description
+%p
+  %b Num responses:
+  = @ad.num_responses
+
+= link_to 'Edit', edit_ad_path(@ad)
+\|
+= link_to 'Back', ads_path

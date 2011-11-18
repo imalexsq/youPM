@@ -1,0 +1,35 @@
+%h1 Listing tenants
+
+%table
+  %tr
+    %th Firstname
+    %th Lastname
+    %th Email
+    %th Phone private
+    %th Phone work
+    %th Phone mobile
+    %th Id number
+    %th Id issuer
+    %th Date of birth
+    %th
+    %th
+    %th
+
+  - @tenants.each do |tenant|
+    %tr
+      %td= tenant.firstname
+      %td= tenant.lastname
+      %td= tenant.email
+      %td= tenant.phone_private
+      %td= tenant.phone_work
+      %td= tenant.phone_mobile
+      %td= tenant.id_number
+      %td= tenant.id_issuer
+      %td= tenant.date_of_birth
+      %td= link_to 'Show', tenant
+      %td= link_to 'Edit', edit_tenant_path(tenant)
+      %td= link_to 'Destroy', tenant, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Tenant', new_tenant_path

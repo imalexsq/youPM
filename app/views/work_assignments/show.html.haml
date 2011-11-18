@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Service from:
+  = @work_assignment.service_from
+
+= link_to 'Edit', edit_work_assignment_path(@work_assignment)
+\|
+= link_to 'Back', work_assignments_path

@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Firstname:
+  = @tenant.firstname
+%p
+  %b Lastname:
+  = @tenant.lastname
+%p
+  %b Email:
+  = @tenant.email
+%p
+  %b Phone private:
+  = @tenant.phone_private
+%p
+  %b Phone work:
+  = @tenant.phone_work
+%p
+  %b Phone mobile:
+  = @tenant.phone_mobile
+%p
+  %b Id number:
+  = @tenant.id_number
+%p
+  %b Id issuer:
+  = @tenant.id_issuer
+%p
+  %b Date of birth:
+  = @tenant.date_of_birth
+
+= link_to 'Edit', edit_tenant_path(@tenant)
+\|
+= link_to 'Back', tenants_path
