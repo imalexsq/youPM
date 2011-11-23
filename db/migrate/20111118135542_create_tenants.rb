@@ -7,8 +7,8 @@ class CreateTenants < ActiveRecord::Migration
       t.string :phone_private
       t.string :phone_work
       t.string :phone_mobile
-      t.int :id_number
-      t.int :id_issuer
+      t.integer :id_number
+      t.integer :id_issuer
       t.date :date_of_birth
 
       t.timestamps

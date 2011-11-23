@@ -13,7 +13,7 @@ class CreateProperties < ActiveRecord::Migration
       t.float :latitude
       t.integer :type
       t.string :year_built
-      t.int :stories
+      t.integer :stories
 
       t.timestamps
     end

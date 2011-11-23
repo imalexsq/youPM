@@ -5,7 +5,7 @@ class CreateAds < ActiveRecord::Migration
       t.date :expiration_date
       t.string :account_name
       t.text :description
-      t.int :num_responses
+      t.integer :num_responses
 
       t.timestamps
     end

@@ -4,7 +4,7 @@ class CreateActivities < ActiveRecord::Migration
       t.text :description
       t.date :date
       t.string :url
-      t.int :urgency
+      t.integer :urgency
 
       t.timestamps
     end

@@ -12,7 +12,7 @@ class CreateVendors < ActiveRecord::Migration
       t.string :contact_person
       t.text :description
       t.text :services
-      t.int :vendor_type
+      t.integer :vendor_type
 
       t.timestamps
     end

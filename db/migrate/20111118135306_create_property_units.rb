@@ -1,14 +1,14 @@
 class CreatePropertyUnits < ActiveRecord::Migration
   def change
     create_table :property_units do |t|
-      t.int :size
-      t.int :size_measure
-      t.int :bedrooms
-      t.int :bathrooms
-      t.int :type
-      t.int :diningrooms
-      t.int :familyrooms
-      t.int :officerooms
+      t.integer :size
+      t.integer :size_measure
+      t.integer :bedrooms
+      t.integer :bathrooms
+      t.integer :type
+      t.integer :diningrooms
+      t.integer :familyrooms
+      t.integer :officerooms
       t.boolean :basement
       t.boolean :loft
       t.string :floortype
