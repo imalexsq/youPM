@@ -11,7 +11,7 @@ development:
 # is too slow)
 development_local:
   username: root
-  password: 
+  password: EEUyXWaboQ33YC
   adapter: mysql2
   encoding: utf8
   host: localhost    # modify your /etc/hosts and direct to ip of your mysql-server
