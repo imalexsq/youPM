@@ -2,6 +2,12 @@ require 'test_helper'
 
 class ManagersControllerTest < ActionController::TestCase
   setup do
+    @input_attributes = {
+       email: "anon@anon.com",
+       password: "private",
+       password_confirmation: "private"
+    }
+
     @manager = managers(:one)
   end
 
@@ -18,7 +24,7 @@ class ManagersControllerTest < ActionController::TestCase
 
   test "should create manager" do
     assert_difference('Manager.count') do
-      post :create, manager: @manager.attributes
+      post :create, manager: @input_attributes
     end
 
     assert_redirected_to manager_path(assigns(:manager))

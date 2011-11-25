@@ -3,7 +3,7 @@ class CreateManagers < ActiveRecord::Migration
     create_table :managers do |t|
       t.string :username
       t.string :email
-      t.string :passwordhash
+      t.string :password_digest
       t.string :lastname
       t.string :firstname
       t.string :phonenumber

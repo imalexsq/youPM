@@ -1,8 +1,9 @@
 class ManagersController < ApplicationController
+  skip_before_filter :authorize, only: [:create, :new]
   # GET /managers
   # GET /managers.json
   def index
-    @managers = Manager.all
+    @managers = Manager.order(:email)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +45,8 @@ class ManagersController < ApplicationController
 
     respond_to do |format|
       if @manager.save
-        format.html { redirect_to @manager, notice: 'Manager was successfully created.' }
+        format.html { redirect_to '/', 
+          notice: 'Manager #{@manager.email} was successfully created.' }
         format.json { render json: @manager, status: :created, location: @manager }
       else
         format.html { render action: "new" }
@@ -60,7 +62,7 @@ class ManagersController < ApplicationController
 
     respond_to do |format|
       if @manager.update_attributes(params[:manager])
-        format.html { redirect_to @manager, notice: 'Manager was successfully updated.' }
+        format.html { redirect_to index, notice: 'Manager was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -73,7 +75,12 @@ class ManagersController < ApplicationController
   # DELETE /managers/1.json
   def destroy
     @manager = Manager.find(params[:id])
-    @manager.destroy
+    begin
+      @manager.destroy
+      flash[:notice] = "#{@manager.email} deleted"
+    rescue Exception => e
+      flash[:notice] = e.message
+    end
 
     respond_to do |format|
       format.html { redirect_to managers_url }

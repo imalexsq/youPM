@@ -26,7 +26,11 @@
                 %ul.dropdown-menu
                   %li= link_to 'Switch to another account', '#'
                   %li.divider
-                  %li= link_to 'Logout', '#'
+                  %li= link_to 'Logout', logout_path, method: :delete
+                  %li.divider
+                  %li= link_to 'Sign up', '/managers/new'
+                  %li= link_to 'Login', '/login', method: :post
+                  %li= link_to 'Admin', '/admin/index'
       .container
         .content
           = yield

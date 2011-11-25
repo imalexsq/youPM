@@ -1,0 +1,16 @@
+%h1 Sessions#new
+%p Find me in app/views/sessions/new.html.haml
+=if flash[:alert]
+  %p{:id => "notice"}=flash[:alert]
+
+=form_tag do
+  %fieldset
+    %legend Login 
+    %div
+      %label{:for => "email"}Email:
+      = text_field_tag :email, params[:email]
+    %div
+      %label{:for => "password"}Password:
+      = password_field_tag :password, params[:password]
+    %div
+      = submit_tag "Login"

@@ -10,8 +10,11 @@
     = f.label :email
     = f.text_field :email
   .field
-    = f.label :passwordhash
-    = f.text_field :passwordhash
+    = f.label :password, 'Password'
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation, 'Confirm Password' 
+    = f.password_field :password_confirmation 
   .field
     = f.label :lastname
     = f.text_field :lastname

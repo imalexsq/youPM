@@ -1,9 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  username: anon@none.gmail.com
-  email: MyString
-  passwordhash: MyString
+  email: bob@0000
+  password_digest: <%= BCrypt::Password.create('secret') %>
   lastname: MyString
   firstname: MyString
   phonenumber: MyString
@@ -18,7 +17,7 @@ one:
 two:
   username: anon2
   email: MyString
-  passwordhash: MyString
+  password_digest: MyString
   lastname: MyString
   firstname: MyString
   phonenumber: MyString

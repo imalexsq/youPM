@@ -1,9 +1,12 @@
 %h1 Listing managers
 
+- if notice
+  %p{:id=>"notice"}= notice 
+
 %table
   %tr
     %th Email
-    %th Passwordhash
+    /   %th Password Digest
     %th Lastname
     %th Firstname
     %th Phonenumber
@@ -18,7 +21,7 @@
   - @managers.each do |manager|
     %tr
       %td= manager.email
-      %td= manager.passwordhash
+      /      %td= manager.password_digest
       %td= manager.lastname
       %td= manager.firstname
       %td= manager.phonenumber

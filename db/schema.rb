@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20111118140130) do
   create_table "managers", :force => true do |t|
     t.string   "username"
     t.string   "email"
-    t.string   "passwordhash"
+    t.string   "password_digest"
     t.string   "lastname"
     t.string   "firstname"
     t.string   "phonenumber"
