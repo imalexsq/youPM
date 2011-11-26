@@ -1,6 +1,7 @@
 class CreateProperties < ActiveRecord::Migration
   def change
     create_table :properties do |t|
+      t.integer :manager_id
       t.string :name
       t.text :headline
       t.text :description

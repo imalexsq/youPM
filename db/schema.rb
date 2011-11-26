@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20111118140130) do
 
   create_table "activities", :force => true do |t|
+    t.integer  "manager_id"
     t.text     "description"
     t.date     "date"
     t.string   "url"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20111118140130) do
   end
 
   create_table "properties", :force => true do |t|
+    t.integer  "manager_id"
     t.string   "name"
     t.text     "headline"
     t.text     "description"
@@ -69,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20111118140130) do
   end
 
   create_table "property_assets", :force => true do |t|
+    t.integer  "property_id"
     t.integer  "type"
     t.string   "url"
     t.integer  "width"
@@ -79,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20111118140130) do
   end
 
   create_table "property_units", :force => true do |t|
+    t.integer  "property_id"
     t.integer  "size"
     t.integer  "size_measure"
     t.integer  "bedrooms"
@@ -112,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20111118140130) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "tenants", :force => true do |t|
+    t.integer  "property_unit_id"
     t.string   "firstname"
     t.string   "lastname"
     t.string   "email"
@@ -143,6 +148,7 @@ ActiveRecord::Schema.define(:version => 20111118140130) do
   end
 
   create_table "work_assignments", :force => true do |t|
+    t.integer  "property_unit_id"
     t.date     "service_from"
     t.datetime "created_at"
     t.datetime "updated_at"

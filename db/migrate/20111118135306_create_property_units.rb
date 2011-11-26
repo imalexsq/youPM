@@ -1,6 +1,7 @@
 class CreatePropertyUnits < ActiveRecord::Migration
   def change
     create_table :property_units do |t|
+      t.integer :property_id
       t.integer :size
       t.integer :size_measure
       t.integer :bedrooms

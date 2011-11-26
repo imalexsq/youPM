@@ -2,7 +2,7 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
+    @properties = Property.find_by_manager_id(session[:manager_id])
 
     respond_to do |format|
       format.html # index.html.erb
