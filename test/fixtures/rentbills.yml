@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tenant_id: 
+  bill_date: 2011-12-04
+
+two:
+  tenant_id: 
+  bill_date: 2011-12-04
