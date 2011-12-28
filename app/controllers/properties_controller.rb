@@ -13,7 +13,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1
   # GET /properties/1.json
   def show
-    @property = Property.find(params[:id])
+    @property = Property.find_by_manager_id(session[:manager_id]).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +25,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new.json
   def new
     @property = Property.new
+    @property.manager_id = session[:manager_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,7 +35,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1/edit
   def edit
-    @property = Property.find(params[:id])
+    @property = Property.find_by_manager_id(session[:manager_id]).find(params[:id])
   end
 
   # POST /properties
@@ -56,7 +57,7 @@ class PropertiesController < ApplicationController
   # PUT /properties/1
   # PUT /properties/1.json
   def update
-    @property = Property.find(params[:id])
+    @property = Property.find_by_manager_id(session[:manager_id]).find(params[:id])
 
     respond_to do |format|
       if @property.update_attributes(params[:property])
@@ -72,7 +73,7 @@ class PropertiesController < ApplicationController
   # DELETE /properties/1
   # DELETE /properties/1.json
   def destroy
-    @property = Property.find(params[:id])
+    @property = Property.find_by_manager_id(session[:manager_id]).find(params[:id])
     @property.destroy
 
     respond_to do |format|
