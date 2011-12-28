@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'haml'
 gem 'haml-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'cancan'
 
 # For deployment we'd want to use capistrano
 gem 'capistrano'
