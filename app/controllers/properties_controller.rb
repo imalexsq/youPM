@@ -2,7 +2,7 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.find_by_manager_id(session[:manager_id])
+    @properties = Property.where(:manager_id=>session[:manager_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,8 +13,7 @@ class PropertiesController < ApplicationController
   # GET /properties/1
   # GET /properties/1.json
   def show
-    @property = Property.find_by_manager_id(session[:manager_id]).find(params[:id])
-
+    @property = Property.where(:id => params[:id], :manager_id => session[:manager_id]).first
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @property }
@@ -25,7 +24,7 @@ class PropertiesController < ApplicationController
   # GET /properties/new.json
   def new
     @property = Property.new
-    @property.manager_id = session[:manager_id]
+    #@property[:manager_id] = session[:manager_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +34,14 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1/edit
   def edit
-    @property = Property.find_by_manager_id(session[:manager_id]).find(params[:id])
+    @property = Property.find_by_id_and_manager_id(params[:id], session[:manager_id])
   end
 
   # POST /properties
   # POST /properties.json
   def create
     @property = Property.new(params[:property])
+    @property[:manager_id] = session[:manager_id]
 
     respond_to do |format|
       if @property.save
@@ -57,7 +57,7 @@ class PropertiesController < ApplicationController
   # PUT /properties/1
   # PUT /properties/1.json
   def update
-    @property = Property.find_by_manager_id(session[:manager_id]).find(params[:id])
+    @property = Property.find_by_id_and_manager_id(params[:id], session[:manager_id])
 
     respond_to do |format|
       if @property.update_attributes(params[:property])
@@ -73,7 +73,7 @@ class PropertiesController < ApplicationController
   # DELETE /properties/1
   # DELETE /properties/1.json
   def destroy
-    @property = Property.find_by_manager_id(session[:manager_id]).find(params[:id])
+    @property = Property.find_by_id_and_manager_id(params[:id], session[:manager_id])
     @property.destroy
 
     respond_to do |format|
