@@ -6,6 +6,12 @@
     for how twitter
     = link_to 'bootstrap', 'http://twitter.github.com/bootstrap/'
     is structured.
+  %h3 Activities
+  - Activity.where(:manager_id => session[:manager_id]) do |activity|
+    %li
+      %p= activity.description
+      %p= activity.date
+
 .row
   .span10
     %h2 This is a 10-grid wide column for contents.

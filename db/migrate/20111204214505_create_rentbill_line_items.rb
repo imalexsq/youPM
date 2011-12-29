@@ -1,7 +1,7 @@
 class CreateRentbillLineItems < ActiveRecord::Migration
   def change
     create_table :rentbill_line_items do |t|
-      t.int :rentbill_id
+      t.integer :rentbill_id
       t.decimal :amount
       t.string :category
       t.text :description

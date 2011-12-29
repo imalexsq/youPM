@@ -14,7 +14,7 @@
       .topbar(data-dropdown="dropdown")
         .fill
           .container
-            =link_to 'youPM', '#', class: :brand
+            =link_to 'youPM', root_url, class: :brand
             %ul.nav
               %li{active_class(:company )}= link_to 'Your Company', '/managers'
               %li{active_class(:offers)}= link_to 'Properties', '/properties'

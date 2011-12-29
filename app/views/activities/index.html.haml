@@ -6,6 +6,7 @@
     %th Date
     %th Url
     %th Urgency
+    %th Tag
     %th
     %th
     %th
@@ -16,6 +17,7 @@
       %td= activity.date
       %td= activity.url
       %td= activity.urgency
+      %td= activity.tag
       %td= link_to 'Show', activity
       %td= link_to 'Edit', edit_activity_path(activity)
       %td= link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete

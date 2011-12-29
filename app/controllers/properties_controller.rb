@@ -43,6 +43,12 @@ class PropertiesController < ApplicationController
     @property = Property.new(params[:property])
     @property[:manager_id] = session[:manager_id]
 
+    @act = Activity.create(
+		 :description => "Added new property " + @property[:name],
+		 :url => properties_url,
+		 :urgency => 0)
+    @act.save
+
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }

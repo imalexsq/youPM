@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111118140130) do
+ActiveRecord::Schema.define(:version => 20111228050935) do
 
   create_table "activities", :force => true do |t|
     t.integer  "manager_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20111118140130) do
     t.date     "date"
     t.string   "url"
     t.integer  "urgency"
+    t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +48,15 @@ ActiveRecord::Schema.define(:version => 20111118140130) do
     t.string   "zip"
     t.string   "country"
     t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.string   "sender"
+    t.string   "receiver"
+    t.date     "sentdate"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -101,6 +111,22 @@ ActiveRecord::Schema.define(:version => 20111118140130) do
     t.boolean  "green"
     t.boolean  "accessible"
     t.boolean  "furnished"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rentbill_line_items", :force => true do |t|
+    t.integer  "rentbill_id"
+    t.decimal  "amount",      :precision => 10, :scale => 0
+    t.string   "category"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rentbills", :force => true do |t|
+    t.integer  "tenant_id"
+    t.date     "bill_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

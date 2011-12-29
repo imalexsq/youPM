@@ -33,9 +33,9 @@ class ActivitiesController < ApplicationController
   end
 
   # GET /activities/1/edit
-  def edit
-    @activity = Activity.find(params[:id])
-  end
+  #def edit
+  #  @activity = Activity.find(params[:id])
+  #end
 
   # POST /activities
   # POST /activities.json
