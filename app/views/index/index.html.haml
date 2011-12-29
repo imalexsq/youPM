@@ -7,10 +7,14 @@
     = link_to 'bootstrap', 'http://twitter.github.com/bootstrap/'
     is structured.
   %h3 Activities
-  - Activity.where(:manager_id => session[:manager_id]) do |activity|
-    %li
-      %p= activity.description
-      %p= activity.date
+  Number of activities: 
+  %p= Activity.all().length() 
+  - Activity.all().each do |activity|
+    %ul
+      %li
+        %p= activity.description
+        %p= activity.date
+         
 
 .row
   .span10
