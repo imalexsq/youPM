@@ -20,17 +20,22 @@
               %li{active_class(:offers)}= link_to 'Properties', '/properties'
               %li{active_class(:affiliates)}= link_to 'Tenants', '/tenants'
               %li{active_class(:reports)}= link_to 'Reports', '#'
+              %li{active_class(:messages )}= link_to 'Messages', '/messages'
             %ul.nav.secondary-nav
               %li.dropdown
-                = link_to 'Hello John Doe', '#', class: 'dropdown-toggle'
-                %ul.dropdown-menu
-                  %li= link_to 'Switch to another account', '#'
-                  %li.divider
-                  %li= link_to 'Logout', logout_path, method: :delete
-                  %li.divider
-                  %li= link_to 'Sign up', '/managers/new'
-                  %li= link_to 'Login', '/login', method: :post
-                  %li= link_to 'Admin', '/admin/index'
+                -if session[:manager_id] == nil
+                  = link_to 'Logged out', '#', class: 'dropdown-toggle'
+                  %ul.dropdown-menu
+                    %li= link_to 'Login', '/login', method: :post
+                    %li= link_to 'Sign up', '/managers/new'
+                -else
+                  = link_to 'Logged in as ' + Manager.find(session[:manager_id]).email, '#', class: 'dropdown-toggle'     
+                  %ul.dropdown-menu
+                    %li= link_to 'Switch to another account', '#'
+                    %li.divider
+                    %li= link_to 'Logout', logout_path, method: :delete
+                    %li.divider
+                    %li= link_to 'Admin', '/admin/index'
       .container
         .content
           = yield

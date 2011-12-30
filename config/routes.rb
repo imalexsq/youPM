@@ -1,6 +1,11 @@
 YouPM::Application.routes.draw do
   get "admin" => "admin#index"
 
+  controller :messages do
+    get "messages" => "messages#index"
+    get "new" => :new
+  end
+
   controller :sessions do
     get "login" => :new
     post "login" => :create

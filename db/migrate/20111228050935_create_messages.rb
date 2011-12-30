@@ -5,6 +5,7 @@ class CreateMessages < ActiveRecord::Migration
       t.string :receiver
       t.date :sentdate
       t.text :content
+      t.string :subject
 
       t.timestamps
     end
