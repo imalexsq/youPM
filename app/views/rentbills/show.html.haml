@@ -1,0 +1,21 @@
+%p#notice= notice 
+
+
+%p
+  Bill Date: 
+  = @rentbill.bill_date 
+
+
+%table
+  %tr
+    %th Category
+    %th Description
+    %th Amount
+  - @rentbill.rentbill_line_item.each do |item|  
+    %tr
+      %td=item.category
+      %td=item.description
+      %td=item.amount
+
+= link_to 'Edit', edit_rentbill_path(@rentbill)
+= link_to 'Back', rentbills_path

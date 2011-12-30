@@ -1,0 +1,20 @@
+%h1 Rent Bills
+
+- if notice
+  %p{:id=>"notice"}= notice 
+
+%table
+  %tr
+    %th Date
+
+  - @rentbills.each do |bill|
+    %tr
+      %td= bill.bill_date
+      %td= bill.tenant_id
+      %td= link_to 'Show', bill
+      %td= link_to 'Edit', edit_rentbill_path(bill)
+      %td= link_to 'Destroy', bill, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Rent Bill', new_rentbill_path

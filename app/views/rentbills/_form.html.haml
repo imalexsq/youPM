@@ -1,0 +1,19 @@
+= form_for @rentbill do |f|
+  -if @rentbill.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@rentbill.errors.count, "error")} prohibited this manager from being saved:"
+      %ul
+        - @rentbill.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :bill_date
+    = f.date_select :bill_date
+  .field
+    = f.label :tenant_id, 'Tenant'
+    = f.text_field :tenant_id
+    -#= f.select :tenant_id
+    -#  = options_from_collection_for_select(Tenant.all, :id, :lastname)
+    -#= f.collection_select(:rentbill, :tenant_id, Tenant.all, :id, :lastname)
+  .actions
+    = f.submit 'Save'

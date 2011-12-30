@@ -1,0 +1,24 @@
+%h1 Private Messages
+
+- if notice
+  %p{:id=>"notice"}= notice 
+
+%table
+  %tr
+    %th Email
+    %th Date
+    %th Subject
+    %th
+
+  - @messages.each do |message|
+    %tr
+      %td= message.email
+      %td= message.date
+      %td= message.subject
+      %td= link_to 'Show', message
+      %td= link_to 'Reply', ''
+      %td= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Message', new_message_path
