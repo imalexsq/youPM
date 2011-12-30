@@ -21,6 +21,7 @@
               %li{active_class(:affiliates)}= link_to 'Tenants', '/tenants'
               %li{active_class(:reports)}= link_to 'Reports', '#'
               %li{active_class(:messages )}= link_to 'Messages', '/messages'
+              %li{active_class(:rentbills )}= link_to 'Rent Bills', '/rentbills'
             %ul.nav.secondary-nav
               %li.dropdown
                 -if session[:manager_id] == nil

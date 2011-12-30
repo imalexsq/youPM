@@ -1,6 +1,10 @@
 YouPM::Application.routes.draw do
   get "admin" => "admin#index"
 
+  resources :rentbills do
+    resources :rentbill_line_items
+  end
+
   controller :messages do
     get "messages" => "messages#index"
     get "new" => :new
