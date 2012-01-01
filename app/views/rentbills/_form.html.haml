@@ -11,9 +11,21 @@
     = f.date_select :bill_date
   .field
     = f.label :tenant_id, 'Tenant'
-    = f.text_field :tenant_id
-    -#= f.select :tenant_id
-    -#  = options_from_collection_for_select(Tenant.all, :id, :lastname)
-    -#= f.collection_select(:rentbill, :tenant_id, Tenant.all, :id, :lastname)
+    = f.collection_select(:tenant_id, Tenant.all, :id, :lastname)
+  -# .field
+    %h3 Line Item
+    = form_for([@rentbill, @rentbill.rentbill_line_items.build]) do |g|
+      .field
+        = g.label :description
+        = g.text_field :description
+      .field
+        = g.label :category
+        = g.text_field :category
+      .field
+        = g.label :amount
+        = g.text_field :amount
+      .actions
+        = g.submit 'Add'
+    
   .actions
     = f.submit 'Save'

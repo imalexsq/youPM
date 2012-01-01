@@ -1,5 +1,5 @@
 class Rentbill < ActiveRecord::Base
-  has_many :rentbill_line_item
+  has_many :rentbill_line_items, :dependent => :destroy
   
   validates :bill_date, :presence => true
   validates :tenant_id, :presence => true

@@ -14,9 +14,10 @@ class RentbillsController < ApplicationController
 
   def update
     @rentbill = Rentbill.find(params[:id])
+
     respond_to do |format|
       if @rentbill.update_attributes(params[:rentbill])
-        format.html { redirect_to index, notice: 'Rent bill was updated.' }
+        format.html { redirect_to :action => 'index', notice: 'Rent bill was updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -46,6 +47,16 @@ class RentbillsController < ApplicationController
     
     respond_to do |format|
       format.html # new.html.haml
+    end
+  end
+
+  def destroy
+    @rentbill = Rentbill.find(params[:id])
+    begin
+      @rentbill.destroy
+      flash[:notice] = "#{@rentbill.bill_date} deleted"
+    rescue Exception => e
+      flash[:notice] = e.message
     end
   end
 end

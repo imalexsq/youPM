@@ -11,7 +11,7 @@
     %th Category
     %th Description
     %th Amount
-  - @rentbill.rentbill_line_item.each do |item|  
+  - @rentbill.rentbill_line_items.each do |item|  
     %tr
       %td=item.category
       %td=item.description

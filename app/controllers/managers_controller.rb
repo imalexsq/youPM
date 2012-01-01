@@ -62,7 +62,7 @@ class ManagersController < ApplicationController
 
     respond_to do |format|
       if @manager.update_attributes(params[:manager])
-        format.html { redirect_to index, notice: 'Manager was successfully updated.' }
+        format.html { redirect_to :action => 'index', notice: 'Manager was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
