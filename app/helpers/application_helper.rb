@@ -19,4 +19,12 @@ module ApplicationHelper
     {}
   end
 
+  def link_to_add_fields(name, f, assoc)
+    new_object = f.object.class.reflect_on_association(assoc).klass.new
+    fields = f.fields_for(assoc, new_object, :child_index => "new_#{assoc}") do |builder| 
+      render(assoc.to_s.singularize + "_fields", :f => builder)
+    end
+    link_to_function(name, h("add_fields(this, '#{assoc}', '#{escape_javascript(fields)}')"))
+  end
+
 end
