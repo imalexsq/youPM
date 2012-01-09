@@ -1,3 +1,13 @@
+1/9/11
+
+The rent bill functionality view still needs some work to get an AJAX form working with the line items. This may or may not be the best design at this point. We could have a simpler non-AJAX form with a fixed number of line items (and a link or button to take you to the next page with more line items). It would depend on the use case. Are we expecting bulk rent bill additions?
+
+The messaging model is there. Again, the view requires some work. 
+
+A metapoint is the authorization design. Currently, the controller is responsible for ensuring that property manager A doesn't acccess property manager B's information. I would like to get this functionality into the model where possible. I have to look into what kind of existing solutions are out there.
+
+The activity stream has hooks in place for new property additions. What other "events" should be included in the activity stream? 
+
 12/1/11
 
 MVP
