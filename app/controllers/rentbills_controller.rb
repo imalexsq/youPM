@@ -1,11 +1,11 @@
 class RentbillsController < ApplicationController
   def create
-    @bill = Rentbill.new
+    @rentbill = Rentbill.new
 
     respond_to do |format|
-      if @bill.save
+      if @rentbill.save
          format.html { redirect_to '/',
-           notice: 'Rent Bill #{@bill.bill_date} was created.' }
+           notice: 'Rent Bill #{@rentbill.bill_date} was created.' }
       else
          format.html { render action: "new" }
       end

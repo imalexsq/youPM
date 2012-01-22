@@ -1,5 +1,5 @@
 = form_for @rentbill do |f|
-  -if @rentbill.errors.any?
+  - if @rentbill.errors.any?
     #error_explanation
       %h2= "#{pluralize(@rentbill.errors.count, "error")} prohibited this manager from being saved:"
       %ul
@@ -17,20 +17,6 @@
       = render "rentbill_line_item_fields", :f => builder
   .field
     = link_to_add_fields "Add Line Item", f, :rentbill_line_items
-  -#.field
-    %h3 Line Item
-    = form_for([@rentbill, @rentbill.rentbill_line_items.build]) do |g|
-      .field
-        = g.label :description
-        = g.text_field :description
-      .field
-        = g.label :category
-        = g.text_field :category
-      .field
-        = g.label :amount
-        = g.text_field :amount
-      .actions
-        = g.submit 'Add'
     
   .actions
     = f.submit 'Save'

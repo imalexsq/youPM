@@ -6,15 +6,16 @@
     for how twitter
     = link_to 'bootstrap', 'http://twitter.github.com/bootstrap/'
     is structured.
-  %h3 Activities
-  Number of activities: 
-  %p= Activity.all().length() 
-  - Activity.all().each do |activity|
-    %ul
-      %li
-        %p= activity.description
-        %p= activity.date
-        %p= link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete
+  - if session[:manager_id] != nil
+    %h3 Activities
+    Number of activities: 
+    %p= @activities.length() 
+    - @activities.each do |activity|
+      %ul
+        %li
+          %p= activity.description
+          %p= activity.date
+          %p= link_to 'Destroy', activity, :confirm => 'Are you sure?', :method => :delete
          
 
 .row
