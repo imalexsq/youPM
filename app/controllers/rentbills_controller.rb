@@ -1,6 +1,6 @@
 class RentbillsController < ApplicationController
   def create
-    @rentbill = Rentbill.new
+    @rentbill = Rentbill.new(params[:rentbill])
 
     respond_to do |format|
       if @rentbill.save
@@ -30,8 +30,9 @@ class RentbillsController < ApplicationController
 
   def index
     @rentbills = Rentbill.all()
+    # Need to select all tenants names (mapping tenant ids to names) for this manager 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
     end
   end
  

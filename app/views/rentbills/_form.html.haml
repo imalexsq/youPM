@@ -1,7 +1,7 @@
 = form_for @rentbill do |f|
   - if @rentbill.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@rentbill.errors.count, "error")} prohibited this manager from being saved:"
+      %h2= "#{pluralize(@rentbill.errors.count, "error")} prohibited this rent bill from being saved:"
       %ul
         - @rentbill.errors.full_messages.each do |msg|
           %li= msg
@@ -12,8 +12,5 @@
   .field
     = f.label :tenant_id, 'Tenant'
     = f.collection_select(:tenant_id, Tenant.all, :id, :lastname)
-  .field
-    = f.fields_for :rentbill_line_items do |builder| 
-      = render "rentbill_line_item_fields", :f => builder
   .actions
     = f.submit 'Save'
