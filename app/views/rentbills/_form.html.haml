@@ -15,8 +15,5 @@
   .field
     = f.fields_for :rentbill_line_items do |builder| 
       = render "rentbill_line_item_fields", :f => builder
-  .field
-    = link_to_add_fields "Add Line Item", f, :rentbill_line_items
-    
   .actions
     = f.submit 'Save'

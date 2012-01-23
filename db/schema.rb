@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20111228050935) do
     t.date     "date"
     t.string   "url"
     t.integer  "urgency"
-    t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20111228050935) do
     t.string   "receiver"
     t.date     "sentdate"
     t.text     "content"
+    t.string   "subject"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

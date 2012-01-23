@@ -32,6 +32,6 @@
     = f.text_field :id_issuer
   .field
     = f.label :date_of_birth
-    = f.date_select :date_of_birth
+    = f.date_select :date_of_birth, :start_year => Time.now.year - 100, :end_year => Time.now.year - 18
   .actions
     = f.submit 'Save'
