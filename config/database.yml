@@ -1,9 +1,9 @@
 development:
-  username: rails
+  username: root
   password: EEUyXWaboQ33YC
   adapter: mysql2
   encoding: utf8
-  host: pm.312h.com
+  host: localhost
   database: yourpm_dev
 
 # This environment is if you want to develop locally using a local available

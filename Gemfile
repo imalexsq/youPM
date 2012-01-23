@@ -10,7 +10,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
-
+gem 'nested_form', :git => "git://github.com/madebydna/nested_form.git"
 
 # For deployment we'd want to use capistrano
 gem 'capistrano'
