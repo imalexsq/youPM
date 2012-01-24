@@ -1,3 +1,4 @@
 12/4/11 1:49pm US Pacific: Adding TODO, CHANGELOG, and Billing models.
 12/27/11 9:11pm US PST: Adding message model, CanCan for per-row authorization restrictions
 1/23/12 Added nested model view for rent bills and some validation throughout.
+1/23/12 Added rudimentary messaging views, controller, and model validations
