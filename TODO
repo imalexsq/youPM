@@ -1,3 +1,7 @@
+1/23/12
+
+Need to add the right query conditions to limit manager view of tenant to his or her own only. 
+
 1/9/11
 
 The rent bill functionality view still needs some work to get an AJAX form working with the line items. This may or may not be the best design at this point. We could have a simpler non-AJAX form with a fixed number of line items (and a link or button to take you to the next page with more line items). It would depend on the use case. Are we expecting bulk rent bill additions?

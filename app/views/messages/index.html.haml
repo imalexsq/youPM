@@ -5,15 +5,16 @@
 
 %table
   %tr
-    %th Email
+    %th From
+    %th To 
     %th Date
     %th Subject
-    %th
 
   - @messages.each do |message|
     %tr
-      %td= message.email
-      %td= message.date
+      %td= message.sender
+      %td= message.receiver
+      %td= message.sentdate
       %td= message.subject
       %td= link_to 'Show', message
       %td= link_to 'Reply', ''

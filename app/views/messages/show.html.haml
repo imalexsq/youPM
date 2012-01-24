@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %b From:
+  = @message.sender
+%p
+  %b To:
+  = @message.receiver
+%p 
+  %b Date:
+  = @message.sentdate
+%p
+  %b Subject:
+  = @message.subject
+%p
+  %b Content:
+  = @message.content
+
+\|
+= link_to 'Back', message_path
