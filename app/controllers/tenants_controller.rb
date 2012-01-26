@@ -2,7 +2,7 @@ class TenantsController < ApplicationController
   # GET /tenants
   # GET /tenants.json
   def index
-    @tenants = Tenant.all
+    @tenants = Tenant.all()
 
     respond_to do |format|
       format.html # index.html.erb
